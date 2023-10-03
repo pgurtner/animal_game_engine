@@ -1,14 +1,7 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+mod game_error;
+mod game;
+mod game_context;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use game_error::GameError;
+pub use game::{Game, GameStepper, GameStepResult};
+pub use game_context::GameContext;
